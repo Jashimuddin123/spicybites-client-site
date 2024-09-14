@@ -6,7 +6,7 @@ const Root = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1>this is root file</h1>
+        
             <Outlet></Outlet>
         </div>
     );
