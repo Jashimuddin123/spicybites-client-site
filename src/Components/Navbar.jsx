@@ -1,5 +1,5 @@
 
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -19,6 +19,9 @@ const Navbar = () => {
       </li>
       <li className="mr-2 font-semibold text-md">
         <NavLink to="/mylist">My Profile</NavLink>
+      </li>
+      <li className="mr-2 font-semibold text-md">
+        <NavLink to="/login">login</NavLink>
       </li>
     </>
   );
