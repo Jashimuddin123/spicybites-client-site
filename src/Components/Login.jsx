@@ -1,14 +1,14 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-// import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 // import { ImGithub } from "react-icons/im";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser,googleLogin } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const {
     register,
@@ -41,11 +41,28 @@ const Login = () => {
           showConfirmButton: true,
         });
       });
+
+
+   
   };
+
+  
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+
+  // social media authentication function here
+  
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
@@ -90,8 +107,12 @@ const Login = () => {
             type="submit"
             value="Login"
           />
+   
         </form>
-
+        <button className="px-8 py-2 rounded border flex items-center gap-4" onClick={handleGoogleLogin}>
+            <FcGoogle />
+            Sign in With Google
+          </button>
         <p className="my-4 text-lg">
           If you do not register? please{" "}
           <Link className="text-blue-800 underline font-semibold" to="/register">
