@@ -13,6 +13,8 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import Register from './Components/Register';
 import Login from './Components/Login';
 import AddFood from './Components/AddFood';
+import AllFood from './Components/AllFood';
+import DetailsFood from './Components/DetailsFood';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,11 @@ const router = createBrowserRouter([
         element:<Home></Home>
       },
       {
+        path:"/allfoods",
+        element:<AllFood></AllFood>
+        // loader: fetch("http://localhost:5000/addfood")
+      },
+      {
         path:"/register",
         element:<Register></Register>
       },
@@ -35,7 +42,18 @@ const router = createBrowserRouter([
       {
       path:"/addfood",
       element:<AddFood></AddFood>
+      },
+      {
+        path: "/detailsFood/:id",
+        element: <DetailsFood></DetailsFood>,
+        loader: ({ params }) => fetch(`http://localhost:5000/addfood/${params.id}`)
       }
+      
+      // {
+      //   path:"/detailsFood/:id",
+      //   element: <DetailsFood></DetailsFood>,
+      //   loader: ({params}) => fetch(`http://localhost:5000/addfood/${params.id}`)
+      // },
     ]
   },
 ]);
