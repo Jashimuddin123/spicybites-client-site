@@ -5,7 +5,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser,user } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState("");
   const {
     register,
@@ -21,13 +21,29 @@ const Register = () => {
     createUser(email, password)
     .then(result => {
       console.log(result.user);
-      Swal.fire({
+      const user = {email}
+      fetch('http://localhost:5000/user',{
+        method: 'POST',
+        headers: {
+          'content-type' : 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      .then(res=> res.json())
+      .then(data=>{
+        console.log('data here is',data);
+        if(data.insertedId){
+  Swal.fire({
         icon: 'success',
         title: 'Registration Successful!',
         text: 'User created successfully',
         showConfirmButton: false,
         timer: 1500
       });
+        }
+        
+      })
+    
     })
     .catch(error => {
       setRegisterError(error.message);
