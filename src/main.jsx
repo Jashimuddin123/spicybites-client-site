@@ -14,7 +14,8 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import AddFood from './Components/AddFood';
 import AllFood from './Components/AllFood';
-import DetailsFood from './Components/DetailsFood';
+// import DetailsFood from './Components/DetailsFood';
+import SingleFood from './Components/SingleFood';
 
 const router = createBrowserRouter([
   {
@@ -43,17 +44,18 @@ const router = createBrowserRouter([
       path:"/addfood",
       element:<AddFood></AddFood>
       },
+      // {
+      //   path: "/singleFood/:id",
+      //   element:<SingleFood></SingleFood>,
+      //   loader: ({ params }) => fetch(`http://localhost:5000/addfood/${params.id}`)
+      // }
+      
       {
-        path: "/detailsFood/:id",
-        element: <DetailsFood></DetailsFood>,
+        path: "/singleFood/:id",
+        element: <SingleFood></SingleFood>,
         loader: ({ params }) => fetch(`http://localhost:5000/addfood/${params.id}`)
       }
       
-      // {
-      //   path:"/detailsFood/:id",
-      //   element: <DetailsFood></DetailsFood>,
-      //   loader: ({params}) => fetch(`http://localhost:5000/addfood/${params.id}`)
-      // },
     ]
   },
 ]);

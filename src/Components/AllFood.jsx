@@ -26,11 +26,12 @@ const AllFood = () => {
               <h2 className="card-title">{food.food_name}</h2>
               <p className="text-md text-gray-600">Category: {food.food_category}</p>
             </div>
-            <Link to={`/detailsFood/${food._id}`}>
-  <button className="text-md font-semibold flex items-center gap-2">
-    Details Food <span><FaArrowCircleRight /></span>
-  </button>
-</Link>
+            <Link to={`/singleFood/${food._id}`}>
+            <button className="text-md font-semibold flex items-center gap-2">
+            Details <span><FaArrowCircleRight /></span>
+           </button>
+            </Link>
+
 
           </div>
         ))}
