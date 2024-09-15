@@ -103,7 +103,7 @@ const Login = () => {
           <br />
 
           <input
-            className="bg-purple-900 text-white rounded py-2 w-full mt-4"
+            className="bg-green-600 mb-4 text-white rounded py-2 w-full mt-4"
             type="submit"
             value="Login"
           />
