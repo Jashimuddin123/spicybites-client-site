@@ -1,16 +1,15 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { ImGithub } from "react-icons/im";
+// import { FcGoogle } from "react-icons/fc";
+// import { ImGithub } from "react-icons/im";
 import Swal from "sweetalert2";
-// import {Helmet} from "react-helmet";
-const Login = () => {
-  const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
-  const [passwordVisible, setPasswordVisible] = useState(false);
+import { useContext, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
+const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const {
     register,
     handleSubmit,
@@ -18,6 +17,7 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data); // Logs email and password to the console
     const { email, password } = data;
     signInUser(email, password)
       .then((result) => {
@@ -42,41 +42,12 @@ const Login = () => {
         });
       });
   };
-
-  const handleGoogleLogin = () => {
-    googleLogin()
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleGithubLogin = () => {
-    githubLogin()
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
   return (
     <div>
-
-
-{/* <Helmet>
-  <title>
-    login
-  </title>
-</Helmet> */}
-
       <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="text-xl font-semibold" htmlFor="email">
@@ -128,14 +99,7 @@ const Login = () => {
           </Link>
         </p>
         <div className="flex gap-4">
-          <button className="px-8 py-2 rounded border flex items-center gap-4" onClick={handleGoogleLogin}>
-            <FcGoogle />
-            Sign in With Google
-          </button>
-          <button className="px-8 py-2 rounded border flex items-center gap-4" onClick={handleGithubLogin}>
-            <ImGithub />
-            Sign in With GitHub
-          </button>
+          {/* Social login buttons (Google, GitHub) can go here */}
         </div>
       </div>
     </div>

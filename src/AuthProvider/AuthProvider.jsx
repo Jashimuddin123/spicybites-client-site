@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { createContext, useState } from "react";
 import auth from "../Firebase/Firebase.config";
 
@@ -15,9 +15,15 @@ const [user, setUser] = useState(null);
         return  createUserWithEmailAndPassword(auth, email, password)
      };
 
+    //  sing in /login function
+    const signInUser = (email, password)=>{
+      return signInWithEmailAndPassword(auth, email, password)
+  }
+
     const spicyInfo = {
           user,
           createUser,
+          signInUser,
           
 
     }
