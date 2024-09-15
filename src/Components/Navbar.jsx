@@ -23,6 +23,9 @@ const Navbar = () => {
       <li className="mr-2 font-semibold text-md">
         <NavLink to="/login">login</NavLink>
       </li>
+      <li className="mr-2 font-semibold text-md">
+        <NavLink to="/addfood">ADDFOOD</NavLink>
+      </li>
     </>
   );
 

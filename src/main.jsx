@@ -12,6 +12,7 @@ import NotFound from './Components/NotFound/NotFound';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Register from './Components/Register';
 import Login from './Components/Login';
+import AddFood from './Components/AddFood';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login></Login>
+      },
+      {
+      path:"/addfood",
+      element:<AddFood></AddFood>
       }
     ]
   },
