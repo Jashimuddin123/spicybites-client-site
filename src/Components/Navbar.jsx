@@ -25,9 +25,7 @@ const Navbar = () => {
       <li className="mr-2 font-semibold text-md">
         <NavLink to="/login">login</NavLink>
       </li>
-      <li className="mr-2 font-semibold text-md">
-        <NavLink to="/myAddedFood">My Added food</NavLink>
-      </li>
+      
        
     </>
   );
@@ -81,9 +79,12 @@ const Navbar = () => {
             tabIndex={0}
             className="menu  menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+            {/* <li>
               <button className="btn btn-sm btn-ghost text-red-800">ADNAN</button>
-            </li>
+            </li> */}
+              <li className="ml-16 font-semibold text-md">
+          <NavLink to="/myAddedFood">My Added food</NavLink>
+           </li>
             <li className=" ml-16 font-semibold text-md">
             <NavLink to="/addfood">ADDFOOD</NavLink>
            </li>

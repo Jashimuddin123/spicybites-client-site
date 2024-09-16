@@ -38,7 +38,7 @@ const MyAdedFood = () => {
                                 <td>{food.quantity}</td>
                                 <td>
                                     {/* Update button */}
-                                    <Link to={`/update-food-item/${food._id}`}>
+                                    <Link to={`/updateFood/${food._id}`}>
                                         <button>Update</button>
                                     </Link>
                                 </td>

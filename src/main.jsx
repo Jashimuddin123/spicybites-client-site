@@ -18,6 +18,7 @@ import AllFood from './Components/AllFood';
 import SingleFood from './Components/SingleFood';
 import FoodPurchase from './Components/FoodPurchase';
 import MyAdedFood from './Components/MyAdedFood';
+import Update from './Components/Update';
 
 const router = createBrowserRouter([
   {
@@ -51,11 +52,7 @@ const router = createBrowserRouter([
         element:<MyAdedFood></MyAdedFood>,
         loader :()=> fetch('http://localhost:5000/addfood') 
       },
-      // {
-      //   path: "/singleFood/:id",
-      //   element:<SingleFood></SingleFood>,
-      //   loader: ({ params }) => fetch(`http://localhost:5000/addfood/${params.id}`)
-      // }
+     
       
       {
         path: "/singleFood/:id",
@@ -68,6 +65,11 @@ const router = createBrowserRouter([
         element:<FoodPurchase></FoodPurchase>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/addfood/${params.id}`)
+      },
+      {
+        path:"updateFood/:id",
+        element:<Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/addfood/${params.id}`)
       }
       
     ]
