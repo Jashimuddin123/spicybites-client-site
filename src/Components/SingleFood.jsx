@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
   const singleFood = useLoaderData(); // Fetch the food data from the loader
@@ -19,7 +19,11 @@ const SingleFood = () => {
   <p>Category: {singleFood.food_category}</p>
   <p>Description: {singleFood.description}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Purchase</button>
+    <Link to= {`/foodPurchase/${singleFood._id}`}>
+            <button className="text-md btn font-semibold flex items-center gap-2">
+            Purchase
+           </button>
+            </Link>
     </div>
   </div>
 </div>

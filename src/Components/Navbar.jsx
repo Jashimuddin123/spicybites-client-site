@@ -26,8 +26,9 @@ const Navbar = () => {
         <NavLink to="/login">login</NavLink>
       </li>
       <li className="mr-2 font-semibold text-md">
-        <NavLink to="/addfood">ADDFOOD</NavLink>
+        <NavLink to="/myAddedFood">My Added food</NavLink>
       </li>
+       
     </>
   );
 
@@ -83,6 +84,9 @@ const Navbar = () => {
             <li>
               <button className="btn btn-sm btn-ghost text-red-800">ADNAN</button>
             </li>
+            <li className=" ml-16 font-semibold text-md">
+            <NavLink to="/addfood">ADDFOOD</NavLink>
+           </li>
             <li>
               <button onClick={logOut} className="btn text-green-600">
                 Logout

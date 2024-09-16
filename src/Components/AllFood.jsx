@@ -19,24 +19,7 @@ const AllFood = () => {
   return (
     <div>
       <h2>All Food Items {allFoods.length}</h2>
-      {/* <ul className="grid gap-y-8 grid-cols-3">
-        {allFoods.map(food => (
-          <div className="card bg-green-300 w-72 gap-y-4-10  h-72 shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out" key={food._id}>
-            <div className="card-body items-center text-center">
-                <img src={food.food_image} alt="" />
-              <h2 className="card-title">{food.food_name}</h2>
-              <p className="text-md text-gray-600">Category: {food.food_category}</p>
-            </div>
-            <Link to={`/singleFood/${food._id}`}>
-            <button className="text-md font-semibold flex items-center gap-2">
-            Details <span><FaArrowCircleRight /></span>
-           </button>
-            </Link>
-
-
-          </div>
-        ))}
-      </ul> */}
+    
 
 
 
