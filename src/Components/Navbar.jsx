@@ -5,6 +5,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  console.log('user id', user);
+  
   const navLinks = (
     <>
       <li className="mr-2 font-semibold text-md">
@@ -19,12 +21,13 @@ const Navbar = () => {
       <li className="mr-2 font-semibold text-md">
         <NavLink to="/addTourist">. Gallery</NavLink>
       </li>
-      <li className="mr-2 font-semibold text-md">
+      {/* <li className="mr-2 font-semibold text-md">
         <NavLink to="/mylist">My Profile</NavLink>
-      </li>
+      </li> */}
       <li className="mr-2 font-semibold text-md">
         <NavLink to="/login">login</NavLink>
       </li>
+     
       
        
     </>
@@ -70,7 +73,7 @@ const Navbar = () => {
           <button tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img
-                src={user?.photoURL}
+                src={user.photoURL}
                 alt="User Avatar"
               />
             </div>
@@ -82,12 +85,17 @@ const Navbar = () => {
             {/* <li>
               <button className="btn btn-sm btn-ghost text-red-800">ADNAN</button>
             </li> */}
+
+         <li className=" ml-16 font-semibold text-md">
+            <NavLink to="/addfood">ADDFOOD</NavLink>
+           </li>
               <li className="ml-16 font-semibold text-md">
           <NavLink to="/myAddedFood">My Added food</NavLink>
            </li>
-            <li className=" ml-16 font-semibold text-md">
-            <NavLink to="/addfood">ADDFOOD</NavLink>
-           </li>
+           <li className=" ml-16 font-semibold text-md">
+        <NavLink to="/purchasefood">My Orderd food</NavLink>
+         </li>
+            
             <li>
               <button onClick={logOut} className="btn text-green-600">
                 Logout

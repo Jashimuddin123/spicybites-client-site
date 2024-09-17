@@ -19,6 +19,7 @@ import SingleFood from './Components/SingleFood';
 import FoodPurchase from './Components/FoodPurchase';
 import MyAdedFood from './Components/MyAdedFood';
 import Update from './Components/Update';
+import OrderdFood from './Components/OrderdFood';
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,11 @@ const router = createBrowserRouter([
         path:"updateFood/:id",
         element:<Update></Update>,
         loader: ({params}) => fetch(`http://localhost:5000/addfood/${params.id}`)
+      },
+      {
+        path: "/purchasefood",
+        element:<OrderdFood></OrderdFood>,
+        loader :()=> fetch('http://localhost:5000/purchasefood') 
       }
       
     ]

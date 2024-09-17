@@ -19,8 +19,8 @@ const SingleFood = () => {
   <p>Category: {singleFood.food_category}</p>
   <p>Description: {singleFood.description}</p>
     <div className="card-actions">
-    <Link to= {`/foodPurchase/${singleFood._id}`}>
-            <button className="text-md btn font-semibold flex items-center gap-2">
+    <Link to= {`/foodPurchase/${singleFood._id}`}> 
+            <button className="text-md btn font-semibold btn-success flex items-center gap-2">
             Purchase
            </button>
             </Link>
