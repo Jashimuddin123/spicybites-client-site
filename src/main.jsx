@@ -20,6 +20,7 @@ import FoodPurchase from './Components/FoodPurchase';
 import MyAdedFood from './Components/MyAdedFood';
 import Update from './Components/Update';
 import OrderdFood from './Components/OrderdFood';
+import Gallery from './Components/Gallery';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
       {
         path:"/myAddedFood",
         element:<MyAdedFood></MyAdedFood>,
+        loader :()=> fetch('http://localhost:5000/addfood') 
+      },
+      {
+        path:"/gallery",
+        element:<Gallery></Gallery>,
         loader :()=> fetch('http://localhost:5000/addfood') 
       },
      
