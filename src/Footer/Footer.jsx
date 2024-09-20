@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-wrap justify-between items-start">
         {/* Left Section (Logo, Address, Social Media) */}
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
-            <div className="flex gap-6">
+            <div className="flex gap-4">
             <img
             src="https://i.ibb.co.com/VBb7Bxh/food-Items.jpg"
             alt="Cooked Logo"
@@ -122,20 +122,20 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-yellow-500 font-bold mb-4">Contact</h3>
           <p className="mb-2">
-            <i className="fa fa-phone-alt mr-2"></i> +1-202-555-0116
+            <i className="fa fa-phone-alt mr-2"></i> : 01820339433
           </p>
           <p className="mb-4">
-            <i className="fa fa-envelope mr-2"></i> hello@wecooked.io
+            <i className="fa fa-envelope mr-2"></i>: adnanmahmud3394@gmail.com
           </p>
           <img
             src="https://i.ibb.co.com/4WRtWFm/shafe.jpg"
             alt="Chef Image"
-            className="w-36"
+            className="w-48 bg-lime-700 rounded"
           />
         </div>
       </div>
       <div className="text-center text-sm text-gray-400 mt-10">
-        <p>© Copyright 2021 Cooked.</p>
+        <p>© Copyright 2024 Cooked.</p>
       </div>
     </footer>
   );

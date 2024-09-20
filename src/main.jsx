@@ -21,7 +21,8 @@ import MyAdedFood from './Components/MyAdedFood';
 import Update from './Components/Update';
 import OrderdFood from './Components/OrderdFood';
 import Gallery from './Components/Gallery';
-import Private from './pRIVATErOUTE/Private';
+import Private from './PrivateRouter/Private';
+// import Private from './pRIVATErOUTE/Private';
 
 const router = createBrowserRouter([
   {
@@ -50,9 +51,14 @@ const router = createBrowserRouter([
       },
       {
       path:"/addfood",
-      element: <Private>
+      element: 
+       
+      <Private>
         <AddFood></AddFood>
       </Private>
+           
+      
+     
       },
       {
         path:"/myAddedFood",
@@ -68,9 +74,12 @@ const router = createBrowserRouter([
       
       {
         path: "/singleFood/:id",
-        element: <Private>
-           <SingleFood></SingleFood>
-        </Private>,
+        element:
+        
+          <Private>
+             <SingleFood></SingleFood>
+          </Private>,
+      
         loader: ({ params }) =>
            fetch(`http://localhost:5000/addfood/${params.id}`)
       },
