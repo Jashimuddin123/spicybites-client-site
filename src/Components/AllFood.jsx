@@ -42,14 +42,15 @@ const AllFood = () => {
 
   return (
     <div>
-      <h2>All Food Items {allFoods.length}</h2>
+     
 
       {/* Search Input */}
-      <div className="mb-4">
+      <div className="mb-4 mx-auto w-96">
+        <h1 className="font-bold my-2">Search Your Food Name</h1>
         <input
           type="text"
           placeholder="Search food by name"
-          className="p-2 border rounded"
+          className="p-2 border border-red-900 rounded"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)} // Update search term on input change
         />

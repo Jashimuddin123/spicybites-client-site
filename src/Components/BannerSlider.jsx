@@ -9,6 +9,7 @@ import "swiper/css/scrollbar";
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const BannerSlider = () => {
   return (
@@ -35,10 +36,14 @@ const BannerSlider = () => {
               Hot, Spicy & Delicious <br />
                 <span className="text-white">Best Catering Service in NYC</span>
               </p>
-              <button className="mt-4 bg-red-600 px-8 py-4 rounded text-white 
+              <div className="text-center mt-8">
+                <Link to="/allfoods">
+                <button className="mt-4 bg-blue-600 px-8 py-4 rounded text-white 
               transition duration-200  text-xl ease-in-out hover:bg-black">
                 All Foods
               </button>
+                </Link>
+            </div>
             </div>
           </div>
         </SwiperSlide>
@@ -54,10 +59,14 @@ const BannerSlider = () => {
               Hot, Spicy & Delicious <br />
                 <span className="text-white">Best Catering Service in NYC</span>
               </p>
-              <button className="mt-4 bg-red-600 px-8 py-4 rounded text-white 
+              <div className="text-center mt-8">
+                <Link to="/allfoods">
+                <button className="mt-4 bg-violet-700 px-8 py-4 rounded text-white 
               transition duration-200  text-xl ease-in-out hover:bg-black">
                 All Foods
               </button>
+                </Link>
+            </div>
             </div>
           </div>
         </SwiperSlide>
@@ -73,10 +82,13 @@ const BannerSlider = () => {
               Hot, Spicy & Delicious <br />
                 <span className="text-white">Best Catering Service in NYC</span>
               </p>
-              <button className="mt-4 bg-red-600 px-8 py-4 rounded text-white 
-              transition duration-200  text-xl ease-in-out hover:bg-black">
-                All Foods
-              </button>
+              <div className="text-center mt-8">
+                <Link to="/allfoods">
+                    <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition duration-300">
+                        View All Food
+                    </button>
+                </Link>
+            </div>
             </div>
           </div>
         </SwiperSlide>
@@ -93,10 +105,13 @@ const BannerSlider = () => {
               Hot, Spicy & Delicious <br />
                 <span className="text-white">Best Catering Service in NYC</span>
               </p>
-              <button className="mt-4 bg-red-600 px-8 py-4 rounded text-white 
-              transition duration-200  text-xl ease-in-out hover:bg-black">
-                All Foods
-              </button>
+              <div className="text-center mt-8">
+                <Link to="/allfoods">
+                    <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition duration-300">
+                        View All Food
+                    </button>
+                </Link>
+            </div>
             </div>
           </div>
         </SwiperSlide>

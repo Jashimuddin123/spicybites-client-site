@@ -62,14 +62,14 @@ const Register = () => {
                {/* <Helmet>
             <title>Register here</title>
           </Helmet> */}
-          <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
+          <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-xl p-6">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <label className="text-xl font-semibold" htmlFor="email">
+              <label className="text-lg font-semibold" htmlFor="email">
                 Name:
               </label>
               <br />
               <input
-                className="input input-bordered w-full mt-2"
+                className="input input-bordered w-full "
                 type="text"
                 id="name"
                 name="name"
@@ -79,12 +79,12 @@ const Register = () => {
                   {errors.name && <span>This field is required</span>}
               <br />
               <br />
-              <label className="text-xl font-semibold" htmlFor="email">
+              <label className="text-lg font-semibold" htmlFor="email">
                 PhotoURL:
               </label>
               <br />
               <input
-                className="input input-bordered w-full mt-2"
+                className="input input-bordered w-full "
                 type="photo"
                 id="photo"
                 name="photo"
@@ -94,12 +94,12 @@ const Register = () => {
                {errors.photo && <span>This field is required</span>}
               <br />
               <br />
-              <label className="text-xl font-semibold" htmlFor="email">
+              <label className="text-lg font-semibold" htmlFor="email">
                 Email:
               </label>
               <br />
               <input
-                className="input input-bordered w-full mt-2"
+                className="input input-bordered w-full "
                 type="email"
                 id="email"
                 name="email"
@@ -110,12 +110,12 @@ const Register = () => {
               <br />
               <br />
     
-              <label className="text-xl font-semibold" htmlFor="password">
+              <label className="text-lg font-semibold" htmlFor="password">
                 Password:
               </label>
               <br />
               <input
-                className="input input-bordered w-full mt-2"
+                className="input input-bordered w-full "
                 type="password"
                 id="password"
                 name="password"
@@ -137,8 +137,8 @@ const Register = () => {
               <br />
               <br />
     
-              <button className="bg-amber-900 text-white rounded py-2 w-full mt-4">Register</button>
-              {registerError && <p className="text-red-500 mt-2">{registerError}</p>}
+              <button className="bg-cyan-500 text-white rounded py-2  w-full ">Register</button>
+              {registerError && <p className="text-red-500 ">{registerError}</p>}
             </form>
     
             <p className="my-4 text-lg">

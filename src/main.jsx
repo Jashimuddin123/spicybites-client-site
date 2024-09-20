@@ -21,6 +21,7 @@ import MyAdedFood from './Components/MyAdedFood';
 import Update from './Components/Update';
 import OrderdFood from './Components/OrderdFood';
 import Gallery from './Components/Gallery';
+import Private from './pRIVATErOUTE/Private';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader :()=> fetch('http://localhost:5000/topFood')
+
       },
       {
         path:"/allfoods",
@@ -47,7 +50,9 @@ const router = createBrowserRouter([
       },
       {
       path:"/addfood",
-      element:<AddFood></AddFood>
+      element: <Private>
+        <AddFood></AddFood>
+      </Private>
       },
       {
         path:"/myAddedFood",
@@ -63,7 +68,9 @@ const router = createBrowserRouter([
       
       {
         path: "/singleFood/:id",
-        element: <SingleFood></SingleFood>,
+        element: <Private>
+           <SingleFood></SingleFood>
+        </Private>,
         loader: ({ params }) =>
            fetch(`http://localhost:5000/addfood/${params.id}`)
       },

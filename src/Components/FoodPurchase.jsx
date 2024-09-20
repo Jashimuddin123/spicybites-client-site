@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useLoaderData, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify'; // Assuming you're using react-toastify for notifications
+import { toast } from 'react-toastify';
+
 
 const FoodPurchase = () => {
     const { user } = useContext(AuthContext); // Get the logged-in user from context
@@ -36,7 +37,7 @@ const FoodPurchase = () => {
         };
 
         // POST request to add food purchase
-        fetch('http://localhost:5000/purchasefood', { // Updated the endpoint here
+        fetch('http://localhost:5000/purchasefood',  { // Updated the endpoint here
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +47,7 @@ const FoodPurchase = () => {
         .then(res => res.json())
         .then(result => {
             console.log("Food item purchased successfully:", result);
-
+       
             // Reset form after successful submission
             setFoodName('');
             setPrice('');
@@ -61,23 +62,34 @@ const FoodPurchase = () => {
             // Show error toast
             toast.error("Error purchasing food item. Please try again.");
         });
+
+        fetch(`http://localhost:5000/purchasefood/${id}`,  { // Updated the endpoint here
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // body: JSON.stringify(purchaseData),
+        })
     };
 
+    
+
     return (
-        <div className='card bg-base-100 w-96 mx-auto shadow-xl'>
+        <div className='card px-10 py-2 bg-base-100 w-[700px] mx-auto shadow-xl'>
             {/* Display the food image */}
             <div className='text-center'>
                 <img 
                     src={foodImage} 
                     alt={foodName} 
-                    className="w-full h-48 object-cover mb-4" 
+                    className="w-full h-full object-cover mb-4" 
                 />
             </div>
             
             <form onSubmit={handlePurchase}>
                 <div>
-                    <label>Food Name:</label>
+                    <label className='font-bold'>Food Name:</label>
                     <input 
+                    className='border px-2  rounded py-2 w-full'
                         type="text" 
                         value={foodName} 
                         onChange={(e) => setFoodName(e.target.value)} 
@@ -86,8 +98,9 @@ const FoodPurchase = () => {
                 </div>
                 
                 <div>
-                    <label>Price:</label>
+                    <label className='font-bold'>Price:</label>
                     <input 
+                     className='border px-2  rounded py-2 w-full'
                         type="number" 
                         value={price} 
                         onChange={(e) => setPrice(e.target.value)} 
@@ -96,8 +109,9 @@ const FoodPurchase = () => {
                 </div>
                 
                 <div>
-                    <label>Quantity:</label>
+                    <label className='font-bold'>Quantity:</label>
                     <input 
+                     className='border px-2  rounded py-2 w-full'
                         type="number" 
                         value={quantity} 
                         onChange={(e) => setQuantity(e.target.value)} 
@@ -107,8 +121,9 @@ const FoodPurchase = () => {
                 </div>
                 
                 <div>
-                    <label>Buyer Name:</label>
-                    <input 
+                    <label className='font-bold'>Buyer Name:</label>
+                    <input
+                      className='border px-2  rounded py-2 w-full'
                         type="text" 
                         value={user.displayName} 
                         readOnly 
@@ -116,8 +131,9 @@ const FoodPurchase = () => {
                 </div>
                 
                 <div>
-                    <label>Buyer Email:</label>
+                    <label className='font-bold'>Buyer Email:</label>
                     <input 
+                     className='border px-2  rounded py-2 w-full'
                         type="email" 
                         value={user.email} 
                         readOnly 
@@ -125,15 +141,16 @@ const FoodPurchase = () => {
                 </div>
                 
                 <div>
-                    <label>Buying Date:</label>
+                    <label className='font-bold'>Buying Date:</label>
                     <input 
+                     className='border px-2  rounded py-2 w-full'
                         type="text" 
                         value={purchaseDate} 
                         readOnly 
                     />
                 </div>
                 
-                <button type="submit" className="btn btn-success">Purchase</button>
+                <button type="submit" className="btn w-full btn-info">Purchase</button>
             </form>
         </div>
     );
