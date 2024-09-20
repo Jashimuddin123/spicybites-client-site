@@ -1,6 +1,8 @@
 import { useLoaderData, useNavigate, Link } from "react-router-dom";
 import BannerSlider from "./BannerSlider";
 import Footer from "../Footer/Footer";
+import OrderNow from "./OrderNow";
+import Delivery from "./Delivery";
 
 const Home = () => {
     const cardData = useLoaderData();
@@ -47,9 +49,12 @@ const Home = () => {
                     </button>
                 </Link>
             </div>
+            <OrderNow></OrderNow>
+            <Delivery></Delivery>
             <Footer></Footer>
         </div>
     );
 };
 
 export default Home;
+
