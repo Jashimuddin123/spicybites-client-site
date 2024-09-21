@@ -15,7 +15,7 @@ const Footer = () => {
           <p className="text-3xl font-bold">SpicyBites</p>
             </div>
           <p className="mb-6">
-            4200 Hamill Avenue, San Diego, California 92109.
+            4200 Gulsan Avenue, San Diego, Bangladesh 92109.
           </p>
           <div className="flex space-x-4">
             <a href="#" className="text-white text-xl">
@@ -130,7 +130,7 @@ const Footer = () => {
           <img
             src="https://i.ibb.co.com/4WRtWFm/shafe.jpg"
             alt="Chef Image"
-            className="w-48 bg-lime-700 rounded"
+            className="w-20 bg-lime-700 rounded"
           />
         </div>
       </div>

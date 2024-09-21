@@ -6,32 +6,32 @@
       "price": 82.99
     },
     {
-      "food_name": "Nasus",
-      "food_image": "https://i.ibb.co.com/J77c3ZF/shiemps1.jpg",
+      "food_name": "Hot Stick",
+      "food_image": "https://i.ibb.co.com/Vjfh9DP/18813.jpg",
       "food_category": "Pasta",
       "price": 15.50
     },
     {
-      "food_name": "Chiken",
-      "food_image": "https://i.ibb.co.com/J77c3ZF/shiemps1.jpg",
+      "food_name": "Chiken khavab",
+      "food_image": "https://i.ibb.co.com/G7wv7gW/chiken-khavab3.jpg",
       "food_category": "Healthy",
       "price": 10.99
     },
     {
-      "food_name": "Beef Burger",
-      "food_image": "https://i.ibb.co.com/J77c3ZF/shiemps1.jpg",
-      "food_category": "Burger",
+      "food_name": "Nasus",
+      "food_image": "https://i.ibb.co.com/ScrMSTY/nasus2.jpg",
+      "food_category": "Spicy food",
       "price": 13.25
     },
     {
-      "food_name": "Sushi Platter",
-      "food_image": "https://i.ibb.co.com/J77c3ZF/shiemps1.jpg",
-      "food_category": "Sushi",
+      "food_name": "Barger",
+      "food_image": "https://i.ibb.co.com/s3Qpz8B/banner1.jpg",
+      "food_category": "spicy barger",
       "price": 22.00
     },
     {
-      "food_name": "Chocolate Lava Cake",
-      "food_image": "https://i.ibb.co.com/G7wv7gW/chiken-khavab3.jpg",
+      "food_name": "Chiken salat Role",
+      "food_image": "https://i.ibb.co.com/93BZDWn/3215.jpg",
       "food_category": "Dessert",
       "price": 8.75
     }

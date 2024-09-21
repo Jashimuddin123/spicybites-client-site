@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -20,7 +21,7 @@ const OrderdFood = () => {
             cancelButtonText: 'No, keep it'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/purchasefood/${id}`, {
+                fetch(`https://spicybites-server-site.vercel.app/purchasefood/${id}`, {
                     method: 'DELETE',
                 })
                 .then(res => res.json())
@@ -56,7 +57,12 @@ const OrderdFood = () => {
 
     return (
         <div>
-            <h2>Ordered Food List</h2>
+            <Helmet>
+  <title>
+    OrderdFood
+  </title>
+</Helmet>
+            <h2 className="text-3xl text-center font-semibold">Ordered Food List</h2>
             <table border="1" cellPadding="10" cellSpacing="0" style={{ width: '100%', textAlign: 'left' }}>
                 <thead>
                     <tr>

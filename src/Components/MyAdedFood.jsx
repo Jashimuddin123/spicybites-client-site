@@ -1,45 +1,45 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
-import { Link } from "react-router-dom"; // Use this for the update button navigation
+import { Link } from "react-router-dom";
 
 const MyAdedFood = () => {
     const myAdedFood = useLoaderData();
-    console.log('my added page food items', myAdedFood);
     
     return (
-        <div>
-            <h1>This is my added food items page</h1>
-
+       <div>
+        <Helmet>
+  <title>
+   MyAdedFood
+  </title>
+</Helmet>
+         <div className="overflow-x-auto">
             {myAdedFood.length > 0 ? (
-                <table border="1" cellPadding="10" cellSpacing="0">
+                <table className="min-w-full border-collapse border border-gray-200">
                     <thead>
-                        <tr>
-                            <th>Food Image</th>
-                            <th>Food Name</th>
-                            <th>Price</th>
-                            <th>Category</th>
-                            {/* <th>Quantity</th> */}
-                            <th>Actions</th>
+                        <tr className="bg-gray-100">
+                            <th className="border border-gray-200 p-2">Food Image</th>
+                            <th className="border border-gray-200 p-2">Food Name</th>
+                            <th className="border border-gray-200 p-2">Price</th>
+                            <th className="border border-gray-200 p-2">Category</th>
+                            <th className="border border-gray-200 p-2">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {myAdedFood.map((food) => (
                             <tr key={food._id}>
-                                <td>
+                                <td className="border border-gray-200 p-2">
                                     <img 
                                         src={food.food_image} 
                                         alt={food.food_name} 
-                                        width="100" 
-                                        height="100" 
+                                        className="w-24 h-24 object-cover" 
                                     />
                                 </td>
-                                <td>{food.food_name}</td>
-                                <td>${food.price}</td>
-                                <td>{food.food_category}</td>
-                                <td>{food.quantity}</td>
-                                <td>
-                                    {/* Update button */}
+                                <td className="border border-gray-200 p-2">{food.food_name}</td>
+                                <td className="border border-gray-200 p-2">${food.price}</td>
+                                <td className="border border-gray-200 p-2">{food.food_category}</td>
+                                <td className="border border-gray-200 p-2">
                                     <Link to={`/updateFood/${food._id}`}>
-                                        <button>Update</button>
+                                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
                                     </Link>
                                 </td>
                             </tr>
@@ -47,9 +47,10 @@ const MyAdedFood = () => {
                     </tbody>
                 </table>
             ) : (
-                <p>No food items added yet.</p>
+                <p className="text-center">No food items added yet.</p>
             )}
         </div>
+       </div>
     );
 };
 

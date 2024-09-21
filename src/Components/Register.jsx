@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const { createUser,user } = useContext(AuthContext);
@@ -15,14 +16,14 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log('onsubmit here',data);
+    // console.log('onsubmit here',data);
     const { email, password } = data;
 
     createUser(email, password)
     .then(result => {
       console.log(result.user);
       const user = {email}
-      fetch('http://localhost:5000/user',{
+      fetch('https://spicybites-server-site.vercel.app/user',{
         method: 'POST',
         headers: {
           'content-type' : 'application/json'
@@ -59,9 +60,11 @@ const Register = () => {
 
     return (
         <div>
-               {/* <Helmet>
-            <title>Register here</title>
-          </Helmet> */}
+            <Helmet>
+        <title>
+         Register
+        </title>
+         </Helmet>
           <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-xl p-6">
             <form onSubmit={handleSubmit(onSubmit)}>
               <label className="text-lg font-semibold" htmlFor="email">
@@ -141,7 +144,7 @@ const Register = () => {
               {registerError && <p className="text-red-500 ">{registerError}</p>}
             </form>
     
-            <p className="my-4 text-lg">
+            <p className="my-4 w-96 mx-auto text-lg">
               Already Have an Account?Please got to{" "}
               <Link className="text-blue-800 underline font-semibold" to="/login">
                 Login

@@ -4,6 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  console.log('user here', user);
   
   const navLinks = (
     <>
@@ -23,12 +24,15 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-blue-500 p-4 flex flex-wrap items-center justify-between">
+    <div className="navbar bg-lime-500  z-40  p-10 flex flex-wrap items-center justify-between">
       {/* Navbar Start */}
-      <div className="navbar-start flex items-center justify-between w-full lg:w-auto">
-        <Link to="/" className="text-4xl text-red-900 font-bold">
-          spicyBites
-        </Link>
+      <div className="navbar-start flex items-center  justify-between w-full lg:w-auto">
+       
+         <div className="flex justify-center gap-2  items-center">
+          <img className="w-10 rounded-lg" src="https://i.ibb.co.com/58CHhFy/logo.jpg" alt="" />
+          <p className="text-3xl text-red-700 font-bold"> SpicyBites</p>
+         </div>
+  
         <div className="dropdown lg:hidden">
           <button tabIndex={0} className="btn btn-ghost">
             <svg
@@ -67,7 +71,7 @@ const Navbar = () => {
             <button tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img
-                  src={user.photoURL}
+                  src={user?.photoURL}
                   alt="User Avatar"
                 />
               </div>
@@ -97,9 +101,7 @@ const Navbar = () => {
             <button className="px-6 py-2 rounded text-white bg-red-900">Login</button>
           </Link>
         )}
-        <button className="bg-red-500 text-white px-4 rounded py-2 mt-2 lg:mt-0 lg:ml-4">
-          01820339433
-        </button>
+      
       </div>
     </div>
   );

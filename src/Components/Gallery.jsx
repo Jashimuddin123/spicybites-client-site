@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Gallery = () => {
     const galleryData = useLoaderData();
@@ -24,7 +25,13 @@ const Gallery = () => {
     };
 
     return (
-        <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://i.ibb.co/Dtr3vPN/685.jpg')" }}>
+      <div>
+           <Helmet>
+  <title>
+ foodpurchase
+  </title>
+</Helmet>
+          <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://i.ibb.co/Dtr3vPN/685.jpg')" }}>
             <div className="bg-black bg-opacity-50 min-h-screen py-10">
                 <h2 className="text-white text-4xl font-bold text-center mb-10">
                     Good Food Gallery
@@ -141,6 +148,7 @@ const Gallery = () => {
                 )}
             </div>
         </div>
+      </div>
     );
 };
 

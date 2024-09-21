@@ -54,12 +54,25 @@ const logOut = () =>{
           {
           
               setUser(currentUser)
-              axios.post('http://localhost:5000/jwt', loguser, {
+              axios.post('https://spicybites-server-site.vercel.app/jwt', loguser, {
                 withCredentials:true
               })
+              .then(res=>console.log('auth res here',res)
+              )
+           .catch(error=>console.log(error)
            
+           )
         }
-        
+        else{
+          axios.post('https://spicybites-server-site.vercel.app/logout', loguser, {
+            withCredentials:true
+          })
+          .then(res=>console.log('auth res here login out',res)
+        )
+     .catch(error=>console.log(error)
+     
+     )
+        }
       });
       return() =>{
         unSubscribe()

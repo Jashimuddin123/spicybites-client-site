@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>,
-        loader :()=> fetch('http://localhost:5000/topFood')
+        loader :()=> fetch('https://spicybites-server-site.vercel.app/topFood')
 
       },
       {
@@ -63,12 +63,12 @@ const router = createBrowserRouter([
       {
         path:"/myAddedFood",
         element:<MyAdedFood></MyAdedFood>,
-        loader :()=> fetch('http://localhost:5000/addfood') 
+        loader :()=> fetch('https://spicybites-server-site.vercel.app/addfood') 
       },
       {
         path:"/gallery",
         element:<Gallery></Gallery>,
-        loader :()=> fetch('http://localhost:5000/addfood') 
+        loader :()=> fetch('https://spicybites-server-site.vercel.app/addfood') 
       },
      
       
@@ -81,23 +81,24 @@ const router = createBrowserRouter([
           </Private>,
       
         loader: ({ params }) =>
-           fetch(`http://localhost:5000/addfood/${params.id}`)
+           fetch(`https://spicybites-server-site.vercel.app/addfood/${params.id}`)
       },
       {
         path:"/foodPurchase/:id",
         element:<FoodPurchase></FoodPurchase>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addfood/${params.id}`)
+          fetch(`https://spicybites-server-site.vercel.app/addfood/${params.id}`)
       },
       {
         path:"updateFood/:id",
         element:<Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/addfood/${params.id}`)
+        loader: ({params}) => fetch(`https://spicybites-server-site.vercel.app/addfood/${params.id}`)
       },
       {
         path: "/purchasefood",
         element:<OrderdFood></OrderdFood>,
-        loader :()=> fetch('http://localhost:5000/purchasefood') 
+        loader :()=> fetch('https://spicybites-server-site.vercel.app/purchasefood') 
+
       }
       
     ]

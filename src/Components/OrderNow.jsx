@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 
 const OrderNow = () => {
     return (
-        <div className="flex flex-col bg-red-400 md:flex-row items-center justify-between  p-6 rounded-lg">
+       <div className="mx-auto w-full border mt-8 ">
+
+<div className="flex flex-col bg-yellow-400
+         md:flex-row-reverse items-center  justify-center gap-20  p-6 rounded-lg">
             {/* Image Section */}
             <div className="md:w-1/2 mb-6 md:mb-0">
                 <img 
                     src="https://i.ibb.co.com/s3Qpz8B/banner1.jpg" 
                     alt="Delicious Burger" 
-                    className="w-9/12 h-auto rounded-lg"
+                    className="w-full h-auto rounded-lg"
                 />
             </div>
             {/* Text Section */}
@@ -17,7 +20,7 @@ const OrderNow = () => {
                     Spicyabaites Commitment To 100% Natural Ingredients!
                 </h1>
                 <p className="text-gray-600 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit placerat ex, vitae accumsan enim semper eget.
+                   We provide best food in the word,if you want best food you can connect our self,hopefully you will satisfy to take our service
                 </p>
                 <ul className="space-y-2 mb-6 text-lg text-gray-700">
                     <li>✅ Fresh Harvest Chicken Salad</li>
@@ -34,6 +37,7 @@ const OrderNow = () => {
                 </Link>
             </div>
         </div>
+       </div>
     );
 };
 

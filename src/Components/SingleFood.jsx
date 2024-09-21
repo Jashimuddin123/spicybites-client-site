@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
   const singleFood = useLoaderData(); // Fetch the food data from the loader
-  console.log('single foods',singleFood);
+  // console.log('single foods',singleFood);
   
 
      

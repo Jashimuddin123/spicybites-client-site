@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signInUser,googleLogin } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // Logs email and password to the console
+    // console.log(data); // Logs email and password to the console
     const { email, password } = data;
     signInUser(email, password)
       .then((result) => {
@@ -64,7 +65,14 @@ const Login = () => {
       });
   };
   return (
+    
     <div>
+      
+<Helmet>
+  <title>
+    login
+  </title>
+</Helmet>
       <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="text-xl font-semibold" htmlFor="email">
@@ -109,19 +117,21 @@ const Login = () => {
           />
    
         </form>
-        <button className="px-8 py-2 rounded border flex items-center gap-4" onClick={handleGoogleLogin}>
-            <FcGoogle />
-            Sign in With Google
-          </button>
-        <p className="my-4 text-lg">
+        <button
+  className="px-8 w-96 mx-auto text-center py-2 rounded border border-gray-400 flex justify-center items-center gap-4"
+  onClick={handleGoogleLogin}
+>
+  <FcGoogle className="text-center" />
+  <p className="text-center">Sign in With Google</p>
+</button>
+
+        <p className="my-4 mx-auto w-96 text-lg">
           If you do not register? please{" "}
           <Link className="text-blue-800 underline font-semibold" to="/register">
             Register
           </Link>
         </p>
-        <div className="flex gap-4">
-          {/* Social login buttons (Google, GitHub) can go here */}
-        </div>
+       
       </div>
     </div>
   );

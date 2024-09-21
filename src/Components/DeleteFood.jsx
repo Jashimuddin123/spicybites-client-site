@@ -1,11 +1,11 @@
 
 
-const DeleteFood = () => {
-    return (
-        <div>
+// const DeleteFood = () => {
+//     return (
+//         <div>
             
-        </div>
-    );
-};
+//         </div>
+//     );
+// };
 
-export default DeleteFood;
+// export default DeleteFood;

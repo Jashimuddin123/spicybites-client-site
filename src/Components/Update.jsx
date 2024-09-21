@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Update = () => {
     const updateData = useLoaderData();
-    console.log('update data here', updateData);
+    // console.log('update data here', updateData);
     
     // State management for each input field
     const [foodName, setFoodName] = useState(updateData.food_name);
@@ -30,7 +31,7 @@ const updateFoodData = {updatedFoodName, updatedFoodPrice,updatedFoodImage,updat
         
         // You can proceed with your update logic here (e.g., API call to update data)
       
-            fetch(`http://localhost:5000/addfood/${updateData._id}`,{
+            fetch(`https://spicybites-server-site.vercel.app/addfood/${updateData._id}`,{
                 method:"PUT",
                 headers:{
                     'content-type' : 'application/json'
@@ -53,7 +54,12 @@ const updateFoodData = {updatedFoodName, updatedFoodPrice,updatedFoodImage,updat
 
     return (
         <div>
-            <h2>This is the update page</h2>
+            <Helmet>
+  <title>
+    Update
+  </title>
+</Helmet>
+            <h2 className="text-center text-3xl font-semibold mt-8">This is the update page</h2>
 
             {/* Form with default values populated from useLoaderData */}
             <form className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12" onSubmit={handleUpdate}>

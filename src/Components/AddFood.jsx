@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const AddFood = () => {
     const { user } = useContext(AuthContext); // Assuming user context is needed
@@ -13,7 +14,7 @@ const AddFood = () => {
         console.log("Form Data:", data);
         
         // You can send a POST request to add the food item
-        fetch('http://localhost:5000/addfood', {
+        fetch('https://spicybites-server-site.vercel.app/addfood', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,7 +38,13 @@ const AddFood = () => {
     };
 
     return (
-        <div className="bg-gray-100 p-6">
+      <div>
+        <Helmet>
+  <title>
+  AddFood
+  </title>
+</Helmet>
+          <div className="bg-gray-100 p-6">
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold mb-6">Add A Food Item</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -136,6 +143,7 @@ const AddFood = () => {
                 <ToastContainer />
             </div>
         </div>
+      </div>
     );
 };
 

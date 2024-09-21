@@ -2,12 +2,13 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 
 const FoodPurchase = () => {
     const { user } = useContext(AuthContext); // Get the logged-in user from context
     const foodPurchase = useLoaderData(); // Get the food details from loader
-    console.log('foodpurchase', foodPurchase);
+    // console.log('foodpurchase', foodPurchase);
     
     const { id } = useParams(); // Get params (if needed)
 
@@ -18,8 +19,8 @@ const FoodPurchase = () => {
     const [purchaseDate] = useState(new Date().toLocaleString()); // Capture current date
     const [foodImage] = useState(foodPurchase.food_image || ''); // Initialize foodImage from foodPurchase object
 
-    console.log('foodPurchase:', foodPurchase);
-    console.log('id:', id);
+    // console.log('foodPurchase:', foodPurchase);
+    // console.log('id:', id);
 
     const handlePurchase = (e) => {
         e.preventDefault();
@@ -37,7 +38,7 @@ const FoodPurchase = () => {
         };
 
         // POST request to add food purchase
-        fetch('http://localhost:5000/purchasefood',  { // Updated the endpoint here
+        fetch('https://spicybites-server-site.vercel.app/purchasefood',  { // Updated the endpoint here
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const FoodPurchase = () => {
             setQuantity(1);
 
             // Show success toast
-            toast.success("Food item purchased successfully!");
+           alert("Food item purchased successfully!");
         })
         .catch(error => {
             console.error("Error purchasing food:", error);
@@ -63,19 +64,26 @@ const FoodPurchase = () => {
             toast.error("Error purchasing food item. Please try again.");
         });
 
-        fetch(`http://localhost:5000/purchasefood/${id}`,  { // Updated the endpoint here
+        fetch(`https://spicybites-server-site.vercel.app/purchasefood/${id}`,  { // Updated the endpoint here
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            // body: JSON.stringify(purchaseData),
+        
         })
     };
 
     
 
     return (
-        <div className='card px-10 py-2 bg-base-100 w-[700px] mx-auto shadow-xl'>
+    <div>
+      <Helmet>
+  <title>
+ foodpurchase
+  </title>
+</Helmet>
+
+            <div className='card px-10 py-2 bg-base-100 w-[700px] mx-auto shadow-xl'>
             {/* Display the food image */}
             <div className='text-center'>
                 <img 
@@ -153,6 +161,7 @@ const FoodPurchase = () => {
                 <button type="submit" className="btn w-full btn-info">Purchase</button>
             </form>
         </div>
+    </div>
     );
 };
 
